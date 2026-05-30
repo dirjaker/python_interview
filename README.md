@@ -1,86 +1,100 @@
 # Python 面试题 Demo 集合
 
-面试准备：Python 高级特性的代码实现和演示
+面试准备：Python 高级特性的代码实现和演示。
 
-## 📁 文件结构
+## 📁 目录结构
 
 ```
 python_interview/
-├── 01_magic_methods.py      # 魔法方法完整演示
-├── 02_decorators.py         # 装饰器完整演示
-├── 03_async_programming.py  # 异步编程完整演示
-├── 04_stdlib_and_patterns.py # 标准库和设计模式
-└── README.md
+├── run_all.py                    # 一键运行所有
+├── README.md
+│
+├── magic_methods/                # 魔法方法（5 个文件）
+│   ├── 01_lifecycle.py           # __new__, __init__, __del__, 单例模式
+│   ├── 02_string_comparison.py   # __str__, __repr__, __eq__, __hash__, 容器协议
+│   ├── 03_arithmetic_context.py  # 算术运算符, __call__, 上下文管理器
+│   ├── 04_attribute_descriptor.py # __getattr__, 描述符, property
+│   └── 05_iterator_generator.py  # 迭代器, 生成器, yield from, send()
+│
+├── decorators/                   # 装饰器（2 个文件）
+│   ├── 01_basic.py               # 基础装饰器, functools.wraps, 带参数装饰器
+│   └── 02_advanced.py            # 装饰器叠加, 重试, 限流, 异步装饰器
+│
+├── async_programming/            # 异步编程（1 个文件）
+│   └── 01_coroutine.py           # 协程, gather, create_task, Semaphore
+│
+├── stdlib/                       # 标准库（2 个文件）
+│   ├── 01_collections.py         # Counter, defaultdict, deque, namedtuple
+│   └── 02_functools.py           # lru_cache, partial, reduce, total_ordering
+│
+└── patterns/                     # 设计模式（1 个文件）
+    └── 01_creational.py          # 单例, 工厂, 建造者, 原型
 ```
-
-## 🎯 内容概览
-
-### 01_magic_methods.py — 魔法方法
-- 对象生命周期 (`__new__`, `__init__`, `__del__`)
-- 字符串表示 (`__str__`, `__repr__`)
-- 比较运算符 (`__eq__`, `__lt__`, `__gt__`)
-- 算术运算符 (`__add__`, `__mul__`, `__neg__`)
-- 容器协议 (`__len__`, `__getitem__`, `__contains__`)
-- 可调用对象 (`__call__`)
-- 上下文管理器 (`__enter__`, `__exit__`)
-- 属性访问控制 (`__getattr__`, `__setattr__`)
-- 描述符协议 (`__get__`, `__set__`)
-- 迭代器协议 (`__iter__`, `__next__`)
-
-### 02_decorators.py — 装饰器
-- 基础装饰器 (`@timer`, `@logger`)
-- 带参数装饰器 (`@retry`, `@rate_limit`)
-- 类装饰器 (`@Singleton`, `@CountCalls`)
-- `functools.wraps` 的作用
-- 属性装饰器 (`@property`)
-- 注册装饰器
-- 异步装饰器
-
-### 03_async_programming.py — 异步编程
-- 协程基础 (`async/await`)
-- 并发执行 (`asyncio.gather`)
-- Task 和 `create_task`
-- 异步上下文管理器
-- 异步迭代器和生成器
-- 异步队列
-- 超时控制
-- Semaphore 限流
-- 异步锁
-- 异步异常处理
-
-### 04_stdlib_and_patterns.py — 标准库和设计模式
-- `collections` (Counter, defaultdict, deque, namedtuple)
-- `itertools` (chain, product, permutations, combinations)
-- `functools` (lru_cache, partial, reduce, total_ordering)
-- `dataclasses`
-- `enum`
-- `pathlib`
-- `re` (正则表达式)
-- `json`
-- `logging`
-- `hashlib`
-- 常见数据结构 (LRU Cache, 堆, 二分查找)
-- 设计模式 (单例, 观察者, 策略)
 
 ## 🚀 运行方式
 
 ```bash
-# 运行单个文件
-python 01_magic_methods.py
-python 02_decorators.py
-python 03_async_programming.py
-python 04_stdlib_and_patterns.py
+# 运行所有演示
+python run_all.py
+
+# 运行指定模块
+python run_all.py magic        # 魔法方法
+python run_all.py decorator    # 装饰器
+python run_all.py async        # 异步编程
+python run_all.py stdlib       # 标准库
+python run_all.py pattern      # 设计模式
+
+# 直接运行单个文件
+python magic_methods/01_lifecycle.py
+python decorators/01_basic.py
 ```
 
-## 📖 配套文档
+## 📖 内容概览
+
+### 魔法方法 (magic_methods/)
+| 文件 | 内试考点 | 示例数 |
+|------|----------|--------|
+| 01_lifecycle | __new__ vs __init__, 单例模式, 不可变类型 | 5 |
+| 02_string_comparison | __str__ vs __repr__, __eq__/__hash__, 容器协议 | 3 |
+| 03_arithmetic_context | 算术运算符, __call__, 上下文管理器 | 3 |
+| 04_attribute_descriptor | __getattr__, 描述符, property | 3 |
+| 05_iterator_generator | 迭代器, 生成器, yield from, send() | 5 |
+
+### 装饰器 (decorators/)
+| 文件 | 面试考点 | 示例数 |
+|------|----------|--------|
+| 01_basic | 基础装饰器, functools.wraps, 带参数装饰器, 类装饰器 | 5 |
+| 02_advanced | 装饰器叠加, 重试, 限流, 异步装饰器, 注册表 | 5 |
+
+### 异步编程 (async_programming/)
+| 文件 | 面试考点 | 示例数 |
+|------|----------|--------|
+| 01_coroutine | 协程, gather, create_task, as_completed, Semaphore | 8 |
+
+### 标准库 (stdlib/)
+| 文件 | 面试考点 | 示例数 |
+|------|----------|--------|
+| 01_collections | Counter, defaultdict, deque, namedtuple, ChainMap | 5 |
+| 02_functools | lru_cache, partial, reduce, total_ordering | 4 |
+
+### 设计模式 (patterns/)
+| 文件 | 面试考点 | 示例数 |
+|------|----------|--------|
+| 01_creational | 单例, 工厂, 建造者, 原型 | 4 |
+
+## 💡 学习建议
+
+1. **先看注释** — 每个文件开头都有"面试高频问题"和"核心要点"
+2. **运行代码** — 亲手运行，观察输出
+3. **修改代码** — 尝试修改参数，理解行为变化
+4. **面试问答** — 每个知识点都有"面试官问 → 标准答"格式
+
+## 📚 配套文档
 
 详细知识点请参考：`project_list/Python面试题精讲-技术文档.md`
 
-## 💡 面试要点
+## ⚠️ 注意事项
 
-1. **魔法方法**: 理解 `__new__` vs `__init__`, 描述符协议, 上下文管理器
-2. **装饰器**: 能手写装饰器, 理解 `functools.wraps` 的作用
-3. **异步编程**: 理解协程, Task, asyncio 的核心概念
-4. **GIL**: 知道 GIL 是什么, 如何绕过
-5. **内存管理**: 引用计数, 垃圾回收, `__slots__`
-6. **设计模式**: 单例, 工厂, 观察者, 策略模式
+- 异步编程文件需要 Python 3.7+
+- 部分示例使用了 `time.sleep()` 模拟耗时操作
+- 运行前确保在项目目录下
