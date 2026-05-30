@@ -11,11 +11,13 @@ Python 面试题 Demo 集合 - 主入口
     python run_all.py async        # 只运行异步编程
     python run_all.py stdlib       # 只运行标准库
     python run_all.py pattern      # 只运行设计模式
+    python run_all.py advanced     # 只运行进阶主题
 """
 
 import sys
 import os
 import importlib
+import subprocess
 
 
 # 模块配置
@@ -56,7 +58,25 @@ MODULES = {
             "patterns.01_creational",
         ]
     },
+    "advanced": {
+        "name": "进阶主题",
+        "files": [
+            "advanced.01_gil",
+            "advanced.02_metaclass",
+            "advanced.03_memory",
+        ]
+    },
 }
+
+
+def run_file(file_path):
+    """运行单个 Python 文件"""
+    # 将模块路径转换为文件路径
+    path = file_path.replace('.', '/') + '.py'
+    if os.path.exists(path):
+        subprocess.run([sys.executable, path], check=True)
+    else:
+        print(f"  ⚠️ 文件不存在: {path}")
 
 
 def run_module(module_name, files):
@@ -67,24 +87,10 @@ def run_module(module_name, files):
 
     for file_path in files:
         try:
-            # 动态导入模块
-            module = importlib.import_module(file_path)
-            # 如果有 main 函数，调用它
-            if hasattr(module, 'main'):
-                import asyncio
-                result = module.main()
-                if asyncio.iscoroutine(result):
-                    asyncio.run(result)
-            # 否则运行 if __name__ == "__main__" 的代码
-            else:
-                spec = importlib.util.find_spec(file_path)
-                if spec:
-                    import subprocess
-                    subprocess.run([sys.executable, spec.origin], check=True)
+            print(f"\n--- {file_path} ---")
+            run_file(file_path)
         except Exception as e:
-            print(f"Error running {file_path}: {e}")
-            import traceback
-            traceback.print_exc()
+            print(f"  ❌ Error running {file_path}: {e}")
 
 
 def list_modules():

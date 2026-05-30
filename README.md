@@ -7,6 +7,7 @@
 ```
 python_interview/
 ├── run_all.py                    # 一键运行所有
+├── CHEATSHEET.md                 # 面试速查表（面试前 30 分钟看）
 ├── README.md
 │
 ├── magic_methods/                # 魔法方法（5 个文件）
@@ -27,8 +28,16 @@ python_interview/
 │   ├── 01_collections.py         # Counter, defaultdict, deque, namedtuple
 │   └── 02_functools.py           # lru_cache, partial, reduce, total_ordering
 │
-└── patterns/                     # 设计模式（1 个文件）
-    └── 01_creational.py          # 单例, 工厂, 建造者, 原型
+├── patterns/                     # 设计模式（1 个文件）
+│   └── 01_creational.py          # 单例, 工厂, 建造者, 原型
+│
+├── advanced/                     # 进阶主题（3 个文件）
+│   ├── 01_gil.py                 # GIL 原理与绕过
+│   ├── 02_metaclass.py           # 元类 (metaclass)
+│   └── 03_memory.py              # 内存管理与垃圾回收
+│
+└── tests/                        # 测试用例
+    └── test_all.py               # pytest 测试
 ```
 
 ## 🚀 运行方式
@@ -43,16 +52,19 @@ python run_all.py decorator    # 装饰器
 python run_all.py async        # 异步编程
 python run_all.py stdlib       # 标准库
 python run_all.py pattern      # 设计模式
+python run_all.py advanced     # 进阶主题
 
 # 直接运行单个文件
 python magic_methods/01_lifecycle.py
-python decorators/01_basic.py
+
+# 运行测试
+pytest tests/ -v
 ```
 
 ## 📖 内容概览
 
 ### 魔法方法 (magic_methods/)
-| 文件 | 内试考点 | 示例数 |
+| 文件 | 面试考点 | 示例数 |
 |------|----------|--------|
 | 01_lifecycle | __new__ vs __init__, 单例模式, 不可变类型 | 5 |
 | 02_string_comparison | __str__ vs __repr__, __eq__/__hash__, 容器协议 | 3 |
@@ -82,12 +94,20 @@ python decorators/01_basic.py
 |------|----------|--------|
 | 01_creational | 单例, 工厂, 建造者, 原型 | 4 |
 
+### 进阶主题 (advanced/) 🆕
+| 文件 | 面试考点 | 示例数 |
+|------|----------|--------|
+| 01_gil | GIL 原理, CPU/IO 密集型, 多进程绕过 | 6 |
+| 02_metaclass | type/object, 动态创建类, 元类, __init_subclass__ | 7 |
+| 03_memory | 引用计数, 循环引用, __slots__, weakref | 6 |
+
 ## 💡 学习建议
 
-1. **先看注释** — 每个文件开头都有"面试高频问题"和"核心要点"
-2. **运行代码** — 亲手运行，观察输出
-3. **修改代码** — 尝试修改参数，理解行为变化
-4. **面试问答** — 每个知识点都有"面试官问 → 标准答"格式
+1. **先看 CHEATSHEET.md** — 面试前 30 分钟快速复习
+2. **再看注释** — 每个文件开头都有"面试高频问题"和"核心要点"
+3. **运行代码** — 亲手运行，观察输出
+4. **修改代码** — 尝试修改参数，理解行为变化
+5. **跑测试** — `pytest tests/ -v` 验证理解
 
 ## 📚 配套文档
 
@@ -98,3 +118,4 @@ python decorators/01_basic.py
 - 异步编程文件需要 Python 3.7+
 - 部分示例使用了 `time.sleep()` 模拟耗时操作
 - 运行前确保在项目目录下
+- 测试需要安装 pytest: `pip install pytest pytest-asyncio`
