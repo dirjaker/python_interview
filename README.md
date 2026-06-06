@@ -6,7 +6,7 @@
 
 [![专题](https://img.shields.io/badge/专题-5-blue?style=flat-square)]()
 [![题目](https://img.shields.io/badge/题目-40+-green?style=flat-square)]()
-[![语言](https://img.shields.io/badge/语言-Python 3.12-orange?style=flat-square)]()
+[![语言](https://img.shields.io/badge/语言-Python%203.12-orange?style=flat-square)]()
 [![更新](https://img.shields.io/badge/更新-2025.06-red?style=flat-square)]()
 
 *数据结构 · 并发编程 · OOP · 装饰器 · 元类 · 面试高频题*
