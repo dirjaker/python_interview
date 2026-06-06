@@ -1,3 +1,20 @@
+<div align="center">
+
+# 🐍 Python Interview
+
+### Python 面试题全集
+
+[![专题](https://img.shields.io/badge/专题-5-blue?style=flat-square)]()
+[![题目](https://img.shields.io/badge/题目-40+-green?style=flat-square)]()
+[![语言](https://img.shields.io/badge/语言-Python 3.12-orange?style=flat-square)]()
+[![更新](https://img.shields.io/badge/更新-2025.06-red?style=flat-square)]()
+
+*数据结构 · 并发编程 · OOP · 装饰器 · 元类 · 面试高频题*
+
+</div>
+
+---
+
 # Python 面试题 Demo 集合
 
 面试准备：Python 高级特性的代码实现和演示。
@@ -119,3 +136,4 @@ pytest tests/ -v
 - 部分示例使用了 `time.sleep()` 模拟耗时操作
 - 运行前确保在项目目录下
 - 测试需要安装 pytest: `pip install pytest pytest-asyncio`
+
