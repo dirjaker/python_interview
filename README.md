@@ -4,8 +4,8 @@
 
 ### Python 面试题全集
 
-[![专题](https://img.shields.io/badge/专题-5-blue?style=flat-square)]()
-[![题目](https://img.shields.io/badge/题目-40+-green?style=flat-square)]()
+[![专题](https://img.shields.io/badge/专题-6-blue?style=flat-square)]()
+[![题目](https://img.shields.io/badge/题目-50+-green?style=flat-square)]()
 [![语言](https://img.shields.io/badge/语言-Python%203.12-orange?style=flat-square)]()
 [![更新](https://img.shields.io/badge/更新-2025.06-red?style=flat-square)]()
 
@@ -52,6 +52,9 @@ python_interview/
 │   ├── 01_gil.py                 # GIL 原理与绕过
 │   ├── 02_metaclass.py           # 元类 (metaclass)
 │   └── 03_memory.py              # 内存管理与垃圾回收
+│
+├── third_party_api/              # 第三方 API 调用（1 个文件）🆕
+│   └── 01_best_practices.py      # 超时/重试/熔断/限流/缓存/幂等/签名
 │
 └── tests/                        # 测试用例
     └── test_all.py               # pytest 测试
@@ -117,6 +120,11 @@ pytest tests/ -v
 | 01_gil | GIL 原理, CPU/IO 密集型, 多进程绕过 | 6 |
 | 02_metaclass | type/object, 动态创建类, 元类, __init_subclass__ | 7 |
 | 03_memory | 引用计数, 循环引用, __slots__, weakref | 6 |
+
+### 第三方 API 调用 (third_party_api/) 🆕
+| 文件 | 面试考点 | 示例数 |
+|------|----------|--------|
+| 01_best_practices | 超时配置, 指数退避重试, 熔断器, 令牌桶限流, 请求签名, TTL缓存, 幂等性, 响应验证, 连接池, 自适应限流 | 10 |
 
 ## 💡 学习建议
 
