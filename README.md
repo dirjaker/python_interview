@@ -19,6 +19,47 @@
 
 一套系统化的 **Python 高级面试题库**，涵盖魔法方法、装饰器、异步编程、设计模式、GIL、元类、内存管理、标准库以及第三方 API 最佳实践等核心主题。每个模块都包含 **详细的中文注释**、**面试高频问答** 和 **可运行的代码示例**，适合面试前快速复习和深度学习。
 
+## 🗺️ 学习指南
+
+> 按优先级排序，面试前可以根据剩余时间选择性学习
+
+### 🔥 必看（面试基本都会问）— 约 3.5 小时
+
+| 文件 | 核心问题 | 时间 |
+|------|---------|:--:|
+| `magic_methods/01_lifecycle.py` | `__new__` vs `__init__`、单例模式 | 30min |
+| `magic_methods/02_string_comparison.py` | `__str__` vs `__repr__`、`__eq__` vs `__hash__` | 30min |
+| `magic_methods/04_attribute_descriptor.py` | `__getattr__` vs `__getattribute__`、property | 30min |
+| `decorators/01_basic.py` | 装饰器本质、`functools.wraps` | 30min |
+| `advanced/01_gil.py` | GIL 原理、怎么绕过 | 25min |
+| `advanced/03_memory.py` | 引用计数、垃圾回收、`__slots__` | 35min |
+
+### ⭐ 推荐看（区分度高的加分项）— 约 3 小时
+
+| 文件 | 核心问题 | 时间 |
+|------|---------|:--:|
+| `magic_methods/03_arithmetic_context.py` | 运算符重载、上下文管理器 | 35min |
+| `magic_methods/05_iterator_generator.py` | 迭代器 vs 生成器、`yield` | 30min |
+| `decorators/02_advanced.py` | 装饰器叠加、异步装饰器 | 30min |
+| `async_programming/01_coroutine.py` | 协程 vs 线程、asyncio | 40min |
+| `advanced/02_metaclass.py` | 元类、`type` vs `object` | 40min |
+
+### ✅ 有时间看（锦上添花）— 约 1.5 小时
+
+| 文件 | 核心问题 | 时间 |
+|------|---------|:--:|
+| `stdlib/01_collections.py` | `defaultdict`、`Counter`、`deque` | 25min |
+| `stdlib/02_functools.py` | `lru_cache`、`partial`、`reduce` | 20min |
+| `patterns/01_creational.py` | 单例/工厂模式 | 30min |
+
+### 📦 最后看（工程经验）— 约 1.5 小时
+
+| 文件 | 核心问题 | 时间 |
+|------|---------|:--:|
+| `third_party_api/01_best_practices.py` | 超时重试、熔断、API Key 管理 | 1.5h |
+
+> 💡 **快速路线**：🔥 必看 6 篇 ≈ 3 小时，加上 `CHEATSHEET.md`（15min），一共不到 4 小时覆盖面试核心。
+
 ## ✨ 功能特性
 
 | 功能 | 描述 |
